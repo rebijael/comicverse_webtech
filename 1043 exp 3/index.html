@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ComicVerse - Comic Book Store</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+/* BASIC RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* WHOLE PAGE */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5e6;
+    background-image:
+        radial-gradient(#e8cfae 1.5px, transparent 1.5px),
+        radial-gradient(#e8cfae 1.5px, transparent 1.5px);
+    background-size: 25px 25px;
+    background-position: 0 0, 12px 12px;
+    color: #241d27;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background-color: #241d27;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 38px;
+    color: #f5c85b;
+    letter-spacing: 3px;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #b8323c;
+    padding: 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 35px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav li:hover {
+    transform: scale(1.1);
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: #f5c85b;
+    background-image: radial-gradient(#dba936 2px, transparent 2px);
+    background-size: 18px 18px;
+    text-align: center;
+    padding: 65px 20px;
+    border-bottom: 5px solid #241d27;
+}
+
+.hero h2 {
+    font-size: 32px;
+    color: #241d27;
+}
+
+.hero p {
+    margin: 10px;
+    font-size: 17px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    padding: 30px;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 25%;
+    background-color: #fff5e6;
+    padding: 22px;
+    border: 3px solid #241d27;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0px #b8323c;
+}
+
+.sidebar h2 {
+    color: #b8323c;
+    margin-bottom: 12px;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+/* CONTENT */
+.content {
+    width: 75%;
+    background-color: #fffaf2;
+    padding: 25px;
+    border: 3px solid #241d27;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0px #f5c85b;
+}
+
+.content h2 {
+    color: #b8323c;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/* COMIC CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;
+    min-width: 0;
+    background-color: white;
+    padding: 15px;
+    border: 2px solid #241d27;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 3px 3px 0px #f5c85b;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #b8323c;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* FEATURED COMIC */
+.featured {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.featured img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #241d27;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+button {
+    background-color: #b8323c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #241d27;
+}
+
+/* OFFERS */
+.offer {
+    background-color: #f5c85b;
+    padding: 20px;
+    margin-top: 25px;
+    border: 2px dashed #241d27;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* CONTACT */
+.contact {
+    margin-top: 25px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #241d27;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 25px;
+}
+
+/* TABLET RESPONSIVENESS */
+@media (max-width: 992px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar,
+    .content {
+        width: 100%;
+    }
+
+    .cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+}
+
+/* SMALL MOBILE SCREENS */
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 12px;
+    }
+
+    .sidebar,
+    .content {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="home">
+    <h1>COMICVERSE</h1>
+    <p>Your Universe of Comics!</p>
+    <p>Grab the latest edition of Marvel's Spider-Man - Limited Stock!</p>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#genres">Genres</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h2>POW! BAM! WELCOME TO COMICVERSE!</h2>
+    <p>Discover your next favourite comic adventure.</p>
+    <p>From legendary superheroes to exciting manga, find it all here!</p>
+</section>
+
+<!-- MAIN CONTAINER -->
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="genres">
+
+        <h2>Available Genres</h2>
+        <ul>
+            <li>Superhero
+                <ul>
+                    <li>Marvel</li>
+                    <li>DC Comics</li>
+                </ul>
+            </li>
+            <li>Manga
+                <ul>
+                    <li>Naruto</li>
+                    <li>One Piece</li>
+                    <li>Attack on Titan</li>
+                </ul>
+            </li>
+            <li>Adventure</li>
+            <li>Fantasy</li>
+            <li>Classic Comics</li>
+        </ul>
+
+        <h2>Top Selling Collections</h2>
+        <ol>
+            <li>Marvel
+                <ol>
+                    <li>Spider-Man</li>
+                    <li>Iron Man</li>
+                    <li>Avengers</li>
+                </ol>
+            </li>
+            <li>DC Comics
+                <ol>
+                    <li>Batman</li>
+                    <li>Superman</li>
+                    <li>Wonder Woman</li>
+                </ol>
+            </li>
+        </ol>
+
+        <h2>Comic Dictionary</h2>
+        <dl>
+            <dt><b>Marvel</b></dt>
+            <dd>A famous superhero comic universe.</dd>
+
+            <dt><b>DC Comics</b></dt>
+            <dd>Home to Batman and Superman.</dd>
+
+            <dt><b>Manga</b></dt>
+            <dd>Japanese-style comic books.</dd>
+        </dl>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <h2 id="collections">Featured Collections</h2>
+        <p>Explore some of our most popular comic collections!</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="comicstrp1.jpeg" alt="Spider-Man Comic">
+                <h3>Spider-Man</h3>
+                <p>Price: ₹399</p>
+                <button>Explore</button>
+            </div>
+
+            <div class="card">
+                <img src="comicstrp2.jpeg" alt="Batman Comic">
+                <h3>Batman</h3>
+                <p>Price: ₹450</p>
+                <button>Explore</button>
+            </div>
+
+            <div class="card">
+                <img src="comicstrp3.jpeg" alt="One Piece Manga">
+                <h3>One Piece</h3>
+                <p>Price: ₹599</p>
+                <button>Explore</button>
+            </div>
+
+        </div>
+
+        <!-- FEATURED COMIC -->
+        <div class="featured">
+            <h2>Comic Strip of the Week</h2>
+
+            <img src="comicbook.jpeg" alt="Featured Comic Book">
+
+            <p>Check out our featured comic and discover a new adventure!</p>
+        </div>
+
+        <!-- PRICE LIST -->
+        <h2>Comic Price List</h2>
+
+        <table border="1" cellpadding="10" width="100%">
+            <tr>
+                <th>Comic Name</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Spider-Man</td>
+                <td>₹399</td>
+            </tr>
+            <tr>
+                <td>Batman</td>
+                <td>₹450</td>
+            </tr>
+            <tr>
+                <td>One Piece Vol. 1</td>
+                <td>₹599</td>
+            </tr>
+            <tr>
+                <td>Naruto Vol. 1</td>
+                <td>₹499</td>
+            </tr>
+        </table>
+
+        <!-- SPECIAL OFFER -->
+        <div class="offer" id="offers">
+            <h2>BOOM! SPECIAL OFFER!</h2>
+            <p>Get exciting discounts on selected comic collections!</p>
+            <p>Limited stock available. Grab your favourites now!</p>
+            <button>Shop Now</button>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact" id="contact">
+            <h2>Contact Us</h2>
+            <p><b>ComicVerse Book Store</b></p>
+            <p>Coimbatore, Tamil Nadu</p>
+            <p>Email: comicverse@gmail.com</p>
+            <p>Phone: +91 9876543210</p>
+        </div>
+
+    </main>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>Thank you for visiting ComicVerse!</p>
+    <p>© 2026 ComicVerse | All Rights Reserved</p>
+    <p><a href="#home" style="color: #f5c85b;">Back to Top ↑</a></p>
+</footer>
+
+</body>
+</html>

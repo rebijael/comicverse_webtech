@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comic Book Store Registration</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Trebuchet MS',sans-serif;
+}
+
+body{
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:700px;
+    background:#fffbea;
+    border:5px solid #000;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:10px 10px 0 #ffcc00;
+}
+
+h1{
+    text-align:center;
+    color:#d62828;
+    font-size:38px;
+    text-shadow:2px 2px #ffcc00;
+    margin-bottom:10px;
+}
+
+p{
+    text-align:center;
+    color:#333;
+    margin-bottom:25px;
+    font-size:17px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+    color:#222;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    border:2px solid #000;
+    border-radius:8px;
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
+}
+
+.gender input,
+.genre input{
+    width:auto;
+    margin-right:5px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:25px;
+    background:#ff3c38;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:20px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    background:#d62828;
+    transform:scale(1.03);
+}
+
+input[type="range"]{
+    accent-color:#ff3c38;
+}
+
+input[type="color"]{
+    height:50px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#555;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>ComicVerse</h1>
+<p>Register today and unlock the world of superheroes & comics!</p>
+
+<form id="comicForm">
+
+<label>Customer Name</label>
+<input type="text" placeholder="Enter your full name" required>
+
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Password</label>
+<input type="password" required>
+
+<label>Age</label>
+<input type="number" min="10" max="80">
+
+<label>Date of Birth</label>
+<input type="date">
+
+<label>Gender</label>
+<div class="gender">
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+</div>
+
+<label>Favorite Comic Genres</label>
+<div class="genre">
+<input type="checkbox"> Superhero
+<input type="checkbox"> Manga
+<input type="checkbox"> Fantasy
+<input type="checkbox"> Sci-Fi
+</div>
+
+<label>Favorite Publisher</label>
+<select>
+<option>Marvel Comics</option>
+<option>DC Comics</option>
+<option>Dark Horse Comics</option>
+<option>Image Comics</option>
+<option>Manga Publishers</option>
+</select>
+
+<label>City</label>
+<input list="cities" placeholder="Choose your city">
+<datalist id="cities">
+<option value="Chennai">
+<option value="Coimbatore">
+<option value="Madurai">
+<option value="Salem">
+<option value="Bangalore">
+<option value="Hyderabad">
+</datalist>
+<label>Comic Fan Level</label>
+<input type="range" min="1" max="10">
+<label>Favorite Superhero Color</label>
+<input type="color">
+<label>Favorite Comic Character</label>
+<textarea rows="4" placeholder="Tell us about your favorite comic hero..."></textarea>
+<button type="submit">📚 Join Comic Club</button>
+</form>
+<div class="footer">
+    POW! • BAM! • ZAP! • Happy Reading!
+</div>
+</div>
+<script>
+document.getElementById("comicForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page refresh
+    alert("🎉 Registration Successful!\nWelcome to ComicVerse!");
+    this.reset(); // Clear the form
+});
+</script>
+</body>
+</html>
