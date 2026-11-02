@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ComicVerse - Advanced CSS3</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+/* BASIC RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5e6;
+    color: #241d27;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background-color: #241d27;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    color: #f5c85b;
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #b8323c;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f5c85b;
+}
+
+/* HERO - MULTIPLE BACKGROUNDS */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+
+    background-image:
+        radial-gradient(#dba936 2px, transparent 2px),
+        linear-gradient(135deg, #f5c85b, #ffe8a3);
+
+    background-size: 20px 20px, cover;
+    background-position: left top, center;
+    background-repeat: repeat, no-repeat;
+}
+
+.hero h2 {
+    font-size: 32px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    padding: 30px;
+}
+
+/* FEATURED SECTION */
+.featured {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+
+    /* ROUNDED CORNERS */
+    border-radius: 20px;
+
+    /* BORDER IMAGE USING GRADIENT */
+    border: 10px solid transparent;
+    border-image: linear-gradient(
+        45deg, #b8323c, #f5c85b, #241d27
+    ) 1;
+}
+
+.featured h2 {
+    color: #b8323c;
+    margin-bottom: 15px;
+}
+
+/* COMIC COLLECTION */
+.comics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    width: 250px;
+    padding: 18px;
+    text-align: center;
+
+    /* ROUNDED CORNERS */
+    border-radius: 15px;
+
+    box-shadow: 4px 4px 0px #f5c85b;
+}
+
+.card h3 {
+    color: #b8323c;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* ADJACENT SIBLING SELECTOR */
+.comic-preview {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+}
+
+.comic-name:hover + .comic-preview {
+    opacity: 1;
+}
+
+.card p {
+    margin-top: 10px;
+}
+
+/* BUTTON */
+button {
+    background-color: #b8323c;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #241d27;
+}
+
+/* PRICE TABLE */
+h2 {
+    margin-bottom: 15px;
+    color: #b8323c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+}
+
+th, td {
+    padding: 13px;
+    border: 1px solid #241d27;
+    text-align: center;
+}
+
+/* NTH-CHILD SELECTOR */
+tr:nth-child(odd) {
+    background-color: #fff0cf;
+}
+
+tr:nth-child(even) {
+    background-color: #f8dfe0;
+}
+
+tr:hover {
+    background-color: #f5c85b;
+}
+
+/* SIGNUP FORM */
+.signup {
+    background-color: white;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 15px;
+    border: 2px solid #241d27;
+}
+
+.signup input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 2px solid #aaa;
+    border-radius: 8px;
+}
+
+/* PSEUDO-CLASSES */
+.signup input:required {
+    background-color: #fff9df;
+}
+
+.signup input:focus {
+    border: 3px solid #b8323c;
+    background-color: #fff0e5;
+    outline: none;
+}
+
+.signup input:valid {
+    border-color: green;
+}
+
+.signup input:invalid {
+    color: #b8323c;
+}
+
+/* FOOTER */
+footer {
+    background-color: #241d27;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="home">
+    <h1>COMICVERSE</h1>
+    <p>Your Universe of Comics!</p>
+    <p>Discover. Collect. Read. Repeat!</p>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#collections">Collections</a>
+    <a href="#prices">Price List</a>
+    <a href="#signup">Join Us</a>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h2>POW! BAM! WELCOME TO COMICVERSE!</h2>
+    <p>Every comic has a story. Find yours here!</p>
+</section>
+
+<div class="container">
+
+    <!-- FEATURED COLLECTION -->
+    <div class="featured">
+        <h2>THE WORLD OF COMICS</h2>
+        <p>
+            Explore exciting superhero adventures,
+            legendary characters and amazing manga
+            collections at ComicVerse!
+        </p>
+    </div>
+
+    <!-- COMIC COLLECTION -->
+    <h2 id="collections">Our Featured Comics</h2>
+
+    <div class="comics">
+
+        <div class="card">
+
+            <h3 class="comic-name">Spider-Man</h3>
+
+            <img class="comic-preview"
+            src="comicstrp1.jpeg"
+            alt="Spider-Man Comic">
+
+            <p>Marvel Superhero</p>
+            <p>Price: ₹399</p>
+
+            <button>Explore</button>
+
+        </div>
+
+        <div class="card">
+
+            <h3 class="comic-name">Batman</h3>
+
+            <img class="comic-preview"
+            src="comicstrp2.jpeg"
+            alt="Batman Comic">
+
+            <p>DC Superhero</p>
+            <p>Price: ₹450</p>
+
+            <button>Explore</button>
+
+        </div>
+
+        <div class="card">
+
+            <h3 class="comic-name">One Piece</h3>
+
+            <img class="comic-preview"
+            src="comicstrp3.jpeg"
+            alt="One Piece Manga">
+
+            <p>Manga Adventure</p>
+            <p>Price: ₹599</p>
+
+            <button>Explore</button>
+
+        </div>
+
+    </div>
+
+    <!-- PRICE TABLE -->
+    <h2 id="prices" style="margin-top: 35px;">
+        Comic Price List
+    </h2>
+
+    <table>
+
+        <tr>
+            <th>Comic Name</th>
+            <th>Genre</th>
+            <th>Price</th>
+        </tr>
+
+        <tr>
+            <td>Spider-Man</td>
+            <td>Superhero</td>
+            <td>₹399</td>
+        </tr>
+
+        <tr>
+            <td>Batman</td>
+            <td>Superhero</td>
+            <td>₹450</td>
+        </tr>
+
+        <tr>
+            <td>One Piece</td>
+            <td>Manga</td>
+            <td>₹599</td>
+        </tr>
+
+        <tr>
+            <td>Naruto</td>
+            <td>Manga</td>
+            <td>₹499</td>
+        </tr>
+
+    </table>
+
+    <!-- SIGNUP FORM -->
+    <div class="signup" id="signup">
+
+        <h2>Join the ComicVerse Club!</h2>
+
+        <p>Sign up to explore our latest comic collections.</p>
+
+        <form>
+
+            <input type="text"
+            placeholder="Enter your name"
+            required>
+
+            <input type="email"
+            placeholder="Enter your email"
+            required>
+
+            <button type="submit">Join Now</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>Thank you for visiting ComicVerse!</p>
+    <p>© 2026 ComicVerse | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
